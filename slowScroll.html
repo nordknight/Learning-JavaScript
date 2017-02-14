@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Анимированная прокрутка jQuery</title>
+    <style>
+    #more{
+      margin-top: 2000px;
+      margin-bottom: 1000px;
+  }
+    </style>
+  </head>
+  <body>
+    <div id="up">
+      Больше информации
+    </div>
+    <a href="javascript://0" onclick="slowScroll('#more')">Вниз</a>
+
+    <div id="more">
+      <a href="javascript://0" onclick="slowScroll('#up')">Вверх</a>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery-3.1.1.js" charset="utf-8"></script>
+
+    <script>
+      function slowScroll(id){
+        var offset = 0;
+        $('html,body').animate({
+          scrollTop: $(id).offset ().top - offset
+        }, 500);
+        return false;
+      }
+    </script>
+  </body>
+</html>
